@@ -141,7 +141,11 @@ export default function Index() {
                 </button>
         </div>
       </section>
+ 
 
+      
+
+      
       {/* Featured Destinations */}
       <section className="py-16 relative">
         {/* Background image with 60% opacity */}
@@ -210,6 +214,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      
 
       {/* Interactive Map & Booking Section */}
       <section className="py-16 bg-gradient-to-b from-white via-orange-100 to-cyan-100 relative">
@@ -561,6 +567,193 @@ export default function Index() {
                 className="w-48 h-44 object-contain"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Heritage Haat */}
+      <section className="relative py-16">
+        {/* Mint dotted background only over top ~35% of card height */}
+        <div
+          className="absolute top-0 left-0 right-0 h-[280px] md:h-[420px]"
+          style={{
+            backgroundColor: '#c9f0e0',
+            backgroundImage:
+              'radial-gradient(#ffffff 1.2px, rgba(255,255,255,0) 1.2px)',
+            backgroundSize: '18px 18px'
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10 pt-4">
+            <h2 className="text-5xl md:text-7xl font-rowdies text-white tracking-wide">
+              HERITAGE HAAT
+            </h2>
+            <div className="mx-auto mt-4 h-[3px] w-[230px] md:w-[320px] lg:w-[360px] rounded-full bg-white/90"></div>
+            <p className="text-xl md:text-2xl font-readex text-white/90 mt-3">Shop. Support. Sustain.</p>
+            {/* thin white line under title */}
+            
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* Card 1 - Local Markets */}
+            <div className="rounded-[28px] overflow-hidden shadow-xl">
+              <div className="relative h-[520px]">
+                <img
+                  src="/market.avif"
+                  alt="Local Markets"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-black/80" />
+                <div className="absolute top-8 left-8 right-8">
+                  <h3 className="text-white text-3xl md:text-4xl font-rowdies leading-tight text-center">LOCAL
+                    <br />MARKETS</h3>
+                </div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white text-base md:text-lg text-center leading-relaxed">
+                    Colorful & vibrant bazaars offering folk art, authentic taste and local flavors.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 - Handicrafts */}
+            <div className="rounded-[28px] overflow-hidden shadow-xl">
+              <div className="relative h-[520px]">
+                <img
+                  src="/handicrafts.avif"
+                  alt="Handicrafts"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-black/80" />
+                <div className="absolute top-8 left-8 right-8">
+                  <h3 className="text-white text-3xl md:text-4xl font-rowdies leading-tight text-center">HANDICRAFTS</h3>
+                </div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white text-base md:text-lg text-center leading-relaxed">
+                    Jharkhand’s exquisite handlooms, tribal and dokra art, and jewelry — crafted with tradition and skill.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 - Authentic Taste */}
+            <div className="rounded-[28px] overflow-hidden shadow-xl">
+              <div className="relative h-[520px]">
+                <img
+                  src="/taste.jpeg"
+                  alt="Authentic Taste"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-black/80" />
+                <div className="absolute top-8 left-8 right-8">
+                  <h3 className="text-white text-3xl md:text-4xl font-rowdies leading-tight text-center">AUTHENTIC
+                    <br />TASTE</h3>
+                </div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white text-base md:text-lg text-center leading-relaxed">
+                    From tribal delicacies to regional cuisines, taste the true essence of Jharkhand.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+           {/* What Travellers Say - placed just below Heritage Haat */}
+            <section className="relative py-14">
+         {/* White base with pattern image from public */}
+         <div
+           className="absolute inset-0 bg-white"
+           style={{
+             backgroundImage: "url('/PATTERN.png')",
+             backgroundRepeat: 'repeat',
+             backgroundSize: 'auto'
+           }}
+         />
+
+        <div className="relative max-w-7xl mx-auto px-4">
+           <h2 className="text-4xl md:text-5xl font-rowdies text-black tracking-wide mb-6 text-center">
+            WHAT TRAVELLERS SAY
+          </h2>
+
+          {/* Horizontal scroll list - edge-to-edge */}
+          <div className="relative -mx-4 sm:-mx-6 md:-mx-8">
+            <div className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2 px-4 sm:px-6 md:px-8 justify-start">
+              {/* left spacer to avoid clipping */}
+              <div className="flex-shrink-0 w-4" />
+              {[
+              {
+                name: 'Abhimanyu',
+                text:
+                  'The eco-tourism package was beautifully planned. Trekking in Netarhat with local guides felt safe and enriching. Truly a great escape!'
+              },
+              {
+                name: 'Yashvika',
+                text:
+                  "Jharkhand surprised me! The waterfalls, forests, and heritage sites are stunning. The interactive map and AR tour made planning super easy."
+              },
+              { name: 'Goraang', text: 'Real-time transport info saved us so much time. We could plan our day better and visit more places stress-free.' },
+              { name: 'Saumya', text: 'Booking homestays and eco-tourism packages here was super easy. Loved the local food recommendations — authentic and unforgettable!' },
+              { name: 'Rishabh', text: 'The multilingual chatbot helped my parents navigate easily. Inclusive and thoughtful experience throughout our trip.' },
+              { name: 'Ananya', text: 'Loved the curation of tribal markets and handicrafts — authentic products and fair prices.' },
+              { name: 'Pooja', text: 'Heritage Haat was amazing. We discovered unique crafts and tasted incredible local food in one place.' },
+              { name: 'Vikram', text: 'Super smooth planning with the app. Accurate timings and helpful tips made the journey hassle-free.' }
+            ].map((item, idx) => (
+              <div key={idx} className="snap-start w-[300px] md:w-[360px] flex-shrink-0">
+                <div className="rounded-[28px] bg-[#1b1b1b] text-white p-6 shadow-xl min-h-[180px] md:min-h-[190px] flex flex-col justify-start">
+                  <div className="font-semibold text-lg mb-2">{item.name}</div>
+                  <p className="text-sm leading-snug opacity-95">{item.text}</p>
+                </div>
+              </div>
+              ))}
+              {/* right spacer to avoid clipping */}
+              <div className="flex-shrink-0 w-4" />
+            </div>
+          </div>
+
+           <div className="mt-4 text-center">
+             <a className="underline text-black text-xl" href="#">See more...</a>
+          </div>
+        </div>
+      </section>
+
+      {/* App Promotion Section */}
+      <section className="py-14 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="relative rounded-[20px] md:rounded-[28px] p-6 md:p-10" style={{
+            background: 'linear-gradient(90deg, rgba(29, 121, 131, 0.9) 0%, rgba(121, 214, 202, 0.9) 100%)'
+          }}>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Left copy */}
+              <div className="text-white max-w-3xl">
+                <h3 className="text-2xl md:text-4xl font-rowdies leading-tight mb-4 max-w-[620px]">
+                  Experience JHARKHAND TOURISM App on Android
+                  <br />
+                  and iOS DEVICES
+                </h3>
+                <p className="opacity-95 text-white text-base md:text-lg mb-6 max-w-[620px]">
+                  Explore Jharkhand’s heritage, culture, and nature, plan your trips, book stays and experiences, and enjoy every journey with one smart app effortlessly.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <a href="#" className="inline-block">
+                    <img src="/appstore.webp" alt="Download on the App Store" className="h-12 md:h-14" />
+                  </a>
+                  <a href="#" className="inline-block">
+                    <img src="/playstore.webp" alt="Get it on Google Play" className="h-12 md:h-14" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Right column left empty; phone image is placed absolutely */}
+              <div className="hidden md:block"></div>
+            </div>
+
+            {/* Phone image positioned bottom-right without frame */}
+            <img
+              src="/phone.png"
+              alt="App preview"
+              className="absolute bottom-4 right-4 w-40 sm:w-44 md:w-56 lg:w-64 h-auto object-contain drop-shadow-2xl transform origin-bottom-right scale-[3]"
+            />
           </div>
         </div>
       </section>
