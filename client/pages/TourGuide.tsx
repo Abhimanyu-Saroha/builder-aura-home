@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronDown, Star, UserPlus, Check } from 'lucide-react';
 
 export default function TourGuide() {
+  const navigate = useNavigate();
   const [selectedLocation, setSelectedLocation] = useState('All Local...');
   const [selectedSort, setSelectedSort] = useState('Sort by Rating');
   const [currentPage, setCurrentPage] = useState(1);
@@ -57,7 +59,7 @@ export default function TourGuide() {
       <header className="bg-[#212121] px-4 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <ChevronLeft className="w-6 h-6 text-white cursor-pointer" />
+            <ChevronLeft onClick={() => navigate('/')} className="w-6 h-6 text-white cursor-pointer" />
             <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-sm"></div>
             </div>
@@ -231,7 +233,7 @@ export default function TourGuide() {
                 />
               </div>
 
-              <button className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors mb-2">
+              <button onClick={() => navigate('/tour-guides/apply')} className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors mb-2">
                 Apply Now
               </button>
               <p className="text-white text-xs text-center opacity-80">

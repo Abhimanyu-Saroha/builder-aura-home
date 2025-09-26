@@ -151,7 +151,7 @@ export default function Index() {
       <section className="py-16 relative">
         {/* Background image with 60% opacity */}
         <div
-          className="absolute inset-0 bg-center bg-cover opacity-60"
+          className="absolute inset-0 bg-left bg-cover opacity-60"
           style={{ backgroundImage: "url('/jharmap.png')" }}
         ></div>
         {/* Bottom white gradient overlay */}
@@ -275,6 +275,7 @@ export default function Index() {
                 { id: 'buses', label: 'Buses', Icon: Bus },
                 { id: 'cabs', label: 'Cabs', Icon: Car },
                 { id: 'hotels', label: 'Hotels', Icon: Hotel }
+                
               ].map(({ id, label, Icon }) => (
                 <button
                   key={id}
@@ -550,7 +551,7 @@ export default function Index() {
 
       {/* Eco Tokens Preview */}
       <section className="pt-4 pb-14 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="rounded-3xl bg-heritage-gradient text-white shadow-xl p-8 flex flex-col lg:flex-row items-center justify-between">
             <div className="text-center lg:text-left lg:flex-1 mb-8 lg:mb-0">
               <h2 className="text-4xl font-rowdies font-bold mb-4">ECO TOKENS</h2>
@@ -753,7 +754,7 @@ export default function Index() {
             <img
               src="/phone.png"
               alt="App preview"
-              className="absolute bottom-4 right-4 w-40 sm:w-44 md:w-56 lg:w-64 h-auto object-contain drop-shadow-2xl transform origin-bottom-right scale-[3]"
+              className="absolute bottom-0 right-2 w-40 sm:w-44 md:w-56 lg:w-64 h-auto object-contain drop-shadow-2xl transform origin-bottom-right scale-[3]"
             />
           </div>
         </div>

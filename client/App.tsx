@@ -12,6 +12,8 @@ import Index from "./pages/Index";
 import EcoTokens from "./pages/EcoTokens";
 import TourGuide from "./pages/TourGuide";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import TourGuideApplication from "./pages/TourGuideApplication";
+import ProfessionalDetails from "./pages/ProfessionalDetails";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +39,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/eco-tokens" element={<EcoTokens />} />
             <Route path="/tour-guides" element={<TourGuide />} />
+            <Route path="/tour-guides/apply" element={<TourGuideApplication />} />
+            <Route path="/tour-guides/apply/professional" element={<ProfessionalDetails />} />
             <Route path="/ar-vr" element={<PlaceholderPage title="AR/VR Experiences" description="Immersive virtual reality tours of Jharkhand's heritage sites coming soon!" />} />
             <Route path="/heritage-haat" element={<PlaceholderPage title="Heritage Haat" description="Shop authentic local handicrafts and traditional products coming soon!" />} />
             <Route path="/plan-trip" element={<PlaceholderPage title="Plan Your Trip" description="AI-powered trip planning for your Jharkhand adventure coming soon!" />} />
