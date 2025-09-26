@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, MapPin, Calendar, Users, Plane, TrainFront, Bus, Car, Hotel, ArrowLeftRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Index() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -396,7 +397,7 @@ export default function Index() {
               </div>
             </div>
             {/* Single bottom View More link (centered on desktop) */}
-            <a href="#" className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-6 text-white/90 hover:text-white underline">View More...</a>
+            <Link to="/tour-guides" className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-6 text-white/90 hover:text-white underline">View More...</Link>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
@@ -453,7 +454,7 @@ export default function Index() {
                       <div className="flex items-center justify-between">
                         <span className="bg-eco-green text-black px-3 py-0.5 rounded-full text-[11px] font-semibold">Certified</span>
                         <button className="bg-white rounded-md py-2 px-4 text-center text-[11px] text-jharkhand-blue font-medium">
-                          View Profile
+                          <Link to="/tour-guides">View Profile</Link>
                         </button>
                       </div>
                     </div>
@@ -462,7 +463,7 @@ export default function Index() {
               ))}
             </div>
             <div className="mt-6 text-center">
-              <a href="#" className="md:hidden text-white/90 hover:text-white underline">View More...</a>
+              <Link to="/tour-guides" className="md:hidden text-white/90 hover:text-white underline">View More...</Link>
             </div>
           </div>
         </div>
