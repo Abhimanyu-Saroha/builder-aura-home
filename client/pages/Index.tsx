@@ -484,16 +484,12 @@ export default function Index() {
               {/* Origin / Destination row with swap icon */}
               <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 items-center">
                 <div className="rounded-2xl border border-white/25 bg-white/10 px-4 py-3">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="opacity-90">Depart</span>
-                    <span className="opacity-90">Origin</span>
-                  </div>
+                  <div className="text-xs opacity-80 mb-1">Origin:</div>
+                  <input id="ai-origin" aria-label="Origin" placeholder="Enter origin" className="bg-transparent w-full text-white placeholder-white/70 outline-none" />
                 </div>
                 <div className="rounded-2xl border border-white/25 bg-white/10 px-4 py-3">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="opacity-90">Arrive</span>
-                    <span className="opacity-90">Destination</span>
-                  </div>
+                  <div className="text-xs opacity-80 mb-1">Destination:</div>
+                  <input id="ai-destination" aria-label="Destination" placeholder="Enter destination" className="bg-transparent w-full text-white placeholder-white/70 outline-none" />
                 </div>
                 <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full items-center justify-center bg-white/20 ring-2 ring-white/30">
                   <ArrowLeftRight className="w-5 h-5" />
@@ -503,19 +499,31 @@ export default function Index() {
               {/* Budget / Travelers */}
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="rounded-2xl border border-white/25 bg-white/10 px-4 py-3">
-                  <div className="text-sm mb-2 text-center">Budget:</div>
-                  <input type="text" className="w-full bg-transparent border-none outline-none placeholder-white/60 text-center" placeholder="Enter budget" />
+                  <div className="text-xs opacity-80 mb-1 text-center">Budget:</div>
+                  <input id="ai-budget" aria-label="Budget" className="w-full bg-transparent border-none outline-none placeholder-white/60 text-center" placeholder="e.g. ₹20,000" />
                 </div>
                 <div className="rounded-2xl border border-white/25 bg-white/10 px-4 py-3">
-                  <div className="text-sm mb-2 text-center">Travelers:</div>
-                  <input type="text" className="w-full bg-transparent border-none outline-none placeholder-white/60 text-center" placeholder="Number of travelers" />
+                  <div className="text-xs opacity-80 mb-1 text-center">Travelers:</div>
+                  <input id="ai-travelers" aria-label="Travelers" className="w-full bg-transparent border-none outline-none placeholder-white/60 text-center" placeholder="e.g. 2" />
                 </div>
               </div>
 
               {/* Interests */}
-              <div className="rounded-2xl border border-white/25 bg-white/10 px-4 py-3 mb-6">
-                <div className="text-sm mb-2 text-center">Interests(heritage,adventure, markets, wildlife, etc.):</div>
-                <textarea className="w-full bg-transparent border-none outline-none placeholder-white/60 h-24 resize-none text-center" placeholder="Describe your interests"></textarea>
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                <div className="rounded-2xl border border-white/25 bg-white/10 px-4 py-3">
+                  <div className="text-xs opacity-80 mb-1 text-center">Accommodation preference:</div>
+                  <select id="ai-accommodation" className="w-full bg-transparent border-none outline-none text-center">
+                    <option className="bg-jharkhand-blue">Any</option>
+                    <option className="bg-jharkhand-blue">Budget Stay</option>
+                    <option className="bg-jharkhand-blue">Mid-range Hotel</option>
+                    <option className="bg-jharkhand-blue">Luxury Resort</option>
+                    <option className="bg-jharkhand-blue">Homestay</option>
+                    <option className="bg-jharkhand-blue">Eco-lodge</option>
+                  </select>
+                </div>
+                <div className="rounded-2xl border border-white/25 bg-white/10 px-4 py-3">
+                  <textarea id="ai-interests" className="w-full bg-transparent border-none outline-none placeholder-white/60 h-24 resize-none text-center" placeholder="Interests (heritage, adventure, markets, wildlife, etc.)"></textarea>
+                </div>
               </div>
 
               {/* Accommodation + CTA row */}
@@ -524,7 +532,19 @@ export default function Index() {
                   <div className="text-sm">Accommodation preference :</div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <button className="inline-flex items-center px-6 py-2 rounded-full bg-white/20 text-white border border-white/40 backdrop-blur-md shadow-sm active:translate-y-[1px]">
+                  <button
+                    onClick={() => {
+                      const origin = (document.getElementById('ai-origin') as HTMLInputElement)?.value || '';
+                      const destination = (document.getElementById('ai-destination') as HTMLInputElement)?.value || '';
+                      const budget = (document.getElementById('ai-budget') as HTMLInputElement)?.value || '';
+                      const travelers = (document.getElementById('ai-travelers') as HTMLInputElement)?.value || '';
+                      const interests = (document.getElementById('ai-interests') as HTMLTextAreaElement)?.value || '';
+                      const accommodation = (document.getElementById('ai-accommodation') as HTMLSelectElement)?.value || '';
+                      const params = new URLSearchParams({ origin, destination, budget, travelers, interests, accommodation });
+                      window.location.href = `/itinerary?${params.toString()}`;
+                    }}
+                    className="inline-flex items-center px-6 py-2 rounded-full bg-white/20 text-white border border-white/40 backdrop-blur-md shadow-sm active:translate-y-[1px]"
+                  >
                     get your itenary planned
                   </button>
                 </div>
