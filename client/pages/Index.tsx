@@ -8,6 +8,23 @@ export default function Index() {
   const [tripType, setTripType] = useState<'oneWay' | 'roundTrip'>('roundTrip');
   const [selectedFare, setSelectedFare] = useState<string>('Regular Fares');
 
+  // Handle search functionality
+  const handleSearch = () => {
+    alert(`Searching for ${activeTab} with ${tripType} trip and ${selectedFare} fare type. This would typically redirect to booking results.`);
+  };
+
+  // Handle tab selection
+  const handleTabClick = (tabId: string) => {
+    setActiveTab(tabId);
+    console.log(`Selected ${tabId} tab`);
+  };
+
+  // Handle fare type selection
+  const handleFareClick = (fare: string) => {
+    setSelectedFare(fare);
+    console.log(`Selected ${fare} fare type`);
+  };
+
   const heroImages = [
     {
       src: "https://api.builder.io/api/v1/image/assets/TEMP/ce25020521328c39c82b42f86c9b26d76faa3c55?width=2880",
@@ -124,8 +141,8 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Bottom-right arrows */}
-        <div className="absolute bottom-6 right-6 z-10 flex space-x-3">
+         {/* Center-right arrows */}
+         <div className="absolute top-1/2 right-6 z-10 flex space-x-3 transform -translate-y-1/2">
                 <button
                   onClick={prevSlide}
                   className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-colors"
@@ -241,7 +258,7 @@ export default function Index() {
               </p>
             </div>
             
-            <div className="relative rounded-5xl overflow-hidden ring-8 ring-white shadow-xl bg-gradient-to-r from-gray-300 to-black h-96">
+            <div className="relative rounded-5xl overflow-hidden ring-8 ring-white shadow-xl bg-gradient-to-r from-gray-300 to-black h-96 border-8 border-black">
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/e199b9745cb19972ff22bbe9aa7d0705e1ef337d?width=2636"
                 alt="Interactive Map"
@@ -279,10 +296,12 @@ export default function Index() {
               ].map(({ id, label, Icon }) => (
                 <button
                   key={id}
-                  onClick={() => setActiveTab(id)}
-                  className={
-                    'flex items-center space-x-2 px-7 py-3 rounded-[18px] border-2 shadow-[0_2px_0_#000] bg-transparent text-black border-black hover:bg-black/5'
-                  }
+                  onClick={() => handleTabClick(id)}
+                  className={`flex items-center space-x-2 px-7 py-3 rounded-[18px] border-2 shadow-[0_2px_0_#000] transition-all duration-200 ${
+                    activeTab === id 
+                      ? 'bg-black text-white border-black' 
+                      : 'bg-transparent text-black border-black hover:bg-black/5 hover:scale-105'
+                  }`}
                 >
                   <Icon className="w-5 h-5" />
                   <span className="font-semibold">{label}</span>
@@ -365,9 +384,11 @@ export default function Index() {
               {["Regular Fares","Armed Forces Fares","Student Fares","Senior Citizen Fares","Doctors & Nurses Fares"].map((fare) => (
                 <button
                   key={fare}
-                  onClick={() => setSelectedFare(fare)}
-                  className={`px-6 py-3 rounded-[18px] border-2 shadow-[0_2px_0_#000] ${
-                    selectedFare === fare ? 'bg-black text-white border-black' : 'bg-transparent text-black border-black hover:bg-black/5'
+                  onClick={() => handleFareClick(fare)}
+                  className={`px-6 py-3 rounded-[18px] border-2 shadow-[0_2px_0_#000] transition-all duration-200 ${
+                    selectedFare === fare 
+                      ? 'bg-black text-white border-black' 
+                      : 'bg-transparent text-black border-black hover:bg-black/5 hover:scale-105'
                   }`}
                 >
                   {fare}
@@ -377,7 +398,10 @@ export default function Index() {
 
             {/* Search Button */}
             <div className="flex justify-center">
-              <button className="bg-black text-white px-12 py-3 rounded-full font-semibold text-lg shadow-[0_3px_0_#000] active:translate-y-[1px]">
+              <button 
+                onClick={handleSearch}
+                className="bg-black text-white px-12 py-3 rounded-full font-semibold text-lg shadow-[0_3px_0_#000] active:translate-y-[1px] hover:bg-gray-800 transition-all duration-200 hover:scale-105"
+              >
                 Search
               </button>
             </div>

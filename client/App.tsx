@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
+import Login from "./pages/Login";
 import EcoTokens from "./pages/EcoTokens";
 import TourGuide from "./pages/TourGuide";
 import PlaceholderPage from "./pages/PlaceholderPage";
@@ -37,6 +38,7 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/eco-tokens" element={<EcoTokens />} />
             <Route path="/tour-guides" element={<TourGuide />} />
             <Route path="/tour-guides/apply" element={<TourGuideApplication />} />
