@@ -109,7 +109,6 @@
     @apply bg-background text-foreground;
   }
 }
-
 /* Utility: hide scrollbars for horizontal carousels */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
