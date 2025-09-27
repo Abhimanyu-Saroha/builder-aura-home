@@ -47,7 +47,7 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   const navigationItems = [
-    { name: 'AR/VR', href: '/ar-vr' },
+    { name: 'Jharkhand360', href: '/jharkhand360' },
     { name: 'Plan your trip', href: '/plan-trip' },
     { name: 'Heritage Haat', href: '/heritage-haat' },
     { name: 'Eco Tokens', href: '/eco-tokens' },

@@ -17,6 +17,7 @@ import TourGuideApplication from "./pages/TourGuideApplication";
 import ProfessionalDetails from "./pages/ProfessionalDetails";
 import ItineraryPlanner from "./pages/ItineraryPlanner";
 import NotFound from "./pages/NotFound";
+import Jharkhand360 from "./pages/Jharkhand360";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/heritage-haat" element={<PlaceholderPage title="Heritage Haat" description="Shop authentic local handicrafts and traditional products coming soon!" />} />
             <Route path="/plan-trip" element={<PlaceholderPage title="Plan Your Trip" description="AI-powered trip planning for your Jharkhand adventure coming soon!" />} />
             <Route path="/itinerary" element={<ItineraryPlanner />} />
+            <Route path="/jharkhand360" element={<Jharkhand360 />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
